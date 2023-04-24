@@ -23,7 +23,7 @@ int _printf(const char *format, ...);
 			format++;
 			if (*format == 'c')
 			{
-				char c = va_arg(arg, int);
+				char c = va_arg(args, int);
 
 				buffer[buffer_index++] = c;
 				if (buffer _index == BUFF_SIZE)
@@ -36,7 +36,7 @@ int _printf(const char *format, ...);
 
 			else if (*format == 's')
 			{
-				char *s = va_arg(args, cahr *);
+				char *s = va_arg(args, char *);
 
 				if (s == NULL)
 				{
@@ -45,7 +45,7 @@ int _printf(const char *format, ...);
 
 				while (*s != '\0')
 				{
-					buffer[buffer_index++] = *s;
+					buffer[buffer_index++] = *s++;
 
 					if (buffer_index == BUFF_SIZE)
 					{
@@ -53,7 +53,6 @@ int _printf(const char *format, ...);
 						printed_chars += buffer_index;
 						buffer_index = 0;
 					}
-					s++;
 				}
 			}
 			else if (*format == '%')
