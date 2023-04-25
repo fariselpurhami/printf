@@ -14,7 +14,7 @@ int get_flags(const char *format, int *i)
 	int curr_i = *i + 1;
 
 	while (format[curr_i] == '-' || format[curr_i] == '+'
-			|| format[curr_i] == '0' || format[curr_1] == '#'
+			|| format[curr_i] == '0' || format[curr_i] == '#'
 					|| format[curr_i] == ' ')
 	{
 
